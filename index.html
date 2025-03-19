@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Datos e información en gráficas</title>
+        <style>
+            body {
+                font-family: Ambit, sans-serif;
+            
+                text-align: center;
+            }
+            div {
+                margin: 2vh 25vw 5vh 25vw;
+            }
+
+            @media (orientation: portrait) {
+                div {
+                    margin: 2vh 2vw 3vh 2vw;
+                }
+            }
+
+            div > svg {
+                margin: 1rem;
+            }
+
+            div > p {
+                margin: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <svg viewBox="0 0 100 100">
+                <defs>
+                    <clipPath id="volcan">
+                        <path
+                            d="M8.15,23.52a2.39,2.39,0,0,1-2.46-2.46A2.46,2.46,0,0,1,8.15,18.6a2.65,2.65,0,0,1,2.46,2.46A2.55,2.55,0,0,1,8.15,23.52Zm50.8,28L92.65,87v1.48H6.55V87l32.1-35.43C36.81,44.43,33,40.74,28.2,40.74c-5.41,0-10,4.8-12.55,13.28a1.71,1.71,0,0,1-2.33,1.36A1.75,1.75,0,0,1,12,53c3.08-10.09,9-16,16.24-16,6.89,0,12.18,5.41,14.51,14.51h1.85v-.24c0-14-12.3-26.2-26.2-27.55a2,2,0,0,1-2-2,1.73,1.73,0,0,1,2-1.85c16,1.6,30.13,15.26,30.13,31.37v.24h1.24v-.24C49.73,28.19,64,9.5,83.18,9.5a1.78,1.78,0,0,1,2,1.84c0,1.11-.74,1.72-2,1.85-17,1.72-29.52,17.1-29.52,38.13v.24h1.6c2.09-13.28,8-20.66,16.48-20.66,7.38,0,13.53,5.78,16.24,14.76a2,2,0,0,1-1.35,2.71c-1.11.24-2-.5-2.34-1.73-2.22-7.5-7-12-12.55-12C65.47,34.59,60.79,40.37,59,51.56ZM11.23,60.05a2.76,2.76,0,0,1,2.46,2.58,2.55,2.55,0,0,1-2.46,2.46,2.6,2.6,0,0,1-2.71-2.46A2.8,2.8,0,0,1,11.23,60.05ZM44.93,27a2.58,2.58,0,0,1,5.16,0,2.58,2.58,0,0,1-5.16,0ZM88.72,53.78a2.76,2.76,0,0,1,2.46,2.58,2.55,2.55,0,0,1-2.46,2.46A2.61,2.61,0,0,1,86,56.36,2.8,2.8,0,0,1,88.72,53.78ZM94,11.47a2.55,2.55,0,0,1-2.46,2.46A2.67,2.67,0,0,1,89,11.47a2.6,2.6,0,0,1,2.59-2.59A2.5,2.5,0,0,1,94,11.47Z"
+                        />
+                    </clipPath>
+                </defs>
+                <image height="100%" width="100%" preserveAspectRatio="xMinYMin slice" xlink:href="fondito.jpg" clip-path="url(#volcan)" />
+            </svg>
+
+            <p>
+                Usando <a href="https://www.guemil.info/" target="_blank">Guemil</a> para una doble representación; el <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths" target="_blank">path</a> que recorta es una
+                representación y la <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image" target="_blank">image</a> recortada es otra.
+            </p>
+
+            <svg viewBox="0 0 42 42">
+                <circle cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+                <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ddd" stroke-width="2"></circle>
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#D2042D" stroke-width="2" stroke-dasharray="89 11" stroke-dashoffset="25"></circle>
+                <text x="50%" y="29" dominant-baseline="middle" text-anchor="middle" font-size="6" fill="#D2042D">89%</text>
+                <image x="15" y="10" width="12" height="12" xlink:href="https://raw.githubusercontent.com/Guemil/Guemil_Icons_v15_2020/main/svg/44_Volcano_eruption_v15.svg"></image>
+            </svg>
+
+            <p>
+                Entre las personas consultadas, un 89% refiere a la semejanza de lo visto con una advertencia de erupción volcánica ya vista (lo que se está representando). El dato de éxito de la referencia también se podría presentar, si se aproxima a 9 en 10, como sigue:
+            </p>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 24" id="personas"></svg>
+
+            <p>En la presentación gráfica del dato de 8 en 10 se utilizó un <a href="https://datavizcatalogue.com/ES/metodos/grafico_de_pictogramas.html" target="_blank">Gráfico de pictogramas</a></p>
+        </div>
+        <script>
+            for (let x = 0; x < 10; x++) {
+                if (x < 9) {
+                    document.querySelector("#personas").innerHTML += `<g <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#04d2a9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" transform ="translate(${x * 24} 0)" ><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg></g> 
+                    `;
+
+                } else {
+                    document.querySelector("#personas").innerHTML += `<g <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="gray" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" transform ="translate(${x * 24} 0)" ><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line></svg></g>`;
+                }
+            }
+        </script>
+    </body>
+</html>
